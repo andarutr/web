@@ -322,5 +322,23 @@
         "url_pptx": null,
         "created_at": "2024-10-15 19:10:00",
         "updated_at": "2024-10-15 19:10:00"
+    },
+    {
+        "id": "19",
+        "title": "Checklist SDP (Sub Distribution Panel)",
+        "picture": "checklist_sdp.webp",
+        "description_id": "<p>SDP Checklist adalah system dimana digunakan untuk mengetahui secara pasti mesin sdp mana yg sedang bermasalah dan kabel mana saja yg overheat. Memiliki fitur pengingat pemeriksaan mesin sdp supaya meminimalisir lupa pemeriksaan mesin.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana.</li>\r\n</ol>",
+        "description_en": "<p>The SDP Checklist is a system which is used to find out exactly which SDP engine is having problems and which cables are overheating. Has a SDP machine check reminder feature to minimize forgetting to check the machine.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana.</li>\r\n</ol>",
+        "ss_1": "checklist_sdp_1.webp",
+        "ss_2": "checklist_sdp_2.webp",
+        "ss_3": "checklist_sdp_3.webp",
+        "ss_4": "checklist_sdp_4.webp",
+        "tech_stack": "Bootstrap, jQuery, Ajax, Laravel, IndexedDB, MySQL",
+        "status": "Private",
+        "url_github": null,
+        "url_video": null,
+        "url_pptx": null,
+        "created_at": "2024-11-04 10:20:00",
+        "updated_at": "2024-11-04 10:20:00"
     }
 ]
