@@ -340,5 +340,23 @@
         "url_pptx": null,
         "created_at": "2024-11-04 10:20:00",
         "updated_at": "2024-11-04 10:20:00"
+    },
+    {
+        "id": "20",
+        "title": "Shelf Life Lab QA",
+        "picture": "shelf_life_qa.webp",
+        "description_id": "<p>Shelf Life Lab QA adalah system web yg memiliki tujuan mempermudah user untuk melakukan request sampel harian dan mempermudah pihak QC, QA dalam management Sampel. Memiliki report lengkap beserta data trend nya.</p>\r\n</ol>",
+        "description_en": "<p>Shelf Life Lab QA is a web system that aims to make it easier for users to request daily samples and make it easier for QC, QA in sample management. Has a complete report along with trend data.</p>\r\n</ol>",
+        "ss_1": "shelf_life_qa_1.webp",
+        "ss_2": "shelf_life_qa_2.webp",
+        "ss_3": "shelf_life_qa_3.webp",
+        "ss_4": "shelf_life_qa_4.webp",
+        "tech_stack": "Bootstrap, jQuery, Ajax, Laravel, MySQL",
+        "status": "Private",
+        "url_github": null,
+        "url_video": null,
+        "url_pptx": null,
+        "created_at": "2024-12-09 09:20:00",
+        "updated_at": "2024-12-09 09:20:00"
     }
 ]
