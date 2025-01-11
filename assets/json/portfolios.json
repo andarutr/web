@@ -358,5 +358,23 @@
         "url_pptx": null,
         "created_at": "2024-12-09 09:20:00",
         "updated_at": "2024-12-09 09:20:00"
+    },
+    {
+        "id": "21",
+        "title": "Transportation Management System",
+        "picture": "tms.webp",
+        "description_id": "<p>TMS adalah aplikasi pelacakan transportasi. Bisa dikatakan ini Gojek versi mini nya. Tujuan dibuatnya TMS agar mempermudah foreman WSM, WPM, WRM, WRH melacak truck miliknya. Selain itu terdapat analisa KPI Driver.</p>\r\n</ol>",
+        "description_en": "<p>TMS is a transportation tracking application. You could say this is the mini version of Gojek. The aim of creating TMS is to make it easier for WSM, WPM, WRM, WRH foremen to track their trucks. Apart from that, there is a KPI Driver analysis.</p>\r\n</ol>",
+        "ss_1": "tms_1.webp",
+        "ss_2": "tms_2.webp",
+        "ss_3": "tms_3.webp",
+        "ss_4": "tms_4.webp",
+        "tech_stack": "Bootstrap, jQuery, Ajax, Laravel, MySQL, Websocket",
+        "status": "Private",
+        "url_github": null,
+        "url_video": "assets/de_doc/tms/tms_all.mp4",
+        "url_pptx": null,
+        "created_at": "2025-01-11 08:00:00",
+        "updated_at": "2025-01-11 08:00:00"
     }
 ]
