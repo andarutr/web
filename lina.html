@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LINA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 250vh;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      overflow-x: hidden;
+      color: #ff3399;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .first-text {
+      font-size: 4rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 2s ease-out forwards;
+    }
+
+    .second-text {
+      font-size: 2.5rem;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: popIn 2s ease-out forwards;
+      animation-delay: 2.5s;
+      margin-top: 20px;
+      color: #e60073;
+    }
+
+    .heart {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      color: #ff66b2;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeInButtons 1s ease-out forwards;
+      animation-delay: 3s;
+    }
+
+    .buttons button {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .yes {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    .no {
+      background-color: #ffb3d9;
+      color: #cc0066;
+    }
+
+    .buttons button:hover {
+      transform: scale(1.1);
+    }
+
+    .thank-you {
+      font-size: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: thankYouAnim 2s ease-out forwards;
+      animation-delay: 1s;
+      text-align: center;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInButtons {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes thankYouAnim {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #cc0066;
+    }
+
+    canvas#confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="heart">❤️</div>
+
+  <div class="section" id="section1">
+    <h1 class="first-text">LINA</h1>
+  </div>
+
+  <div class="section" id="section2">
+    <h2 class="second-text">WILL YOU MARRY ME?</h2>
+    <div class="buttons" id="buttonContainer">
+      <button class="yes" onclick="showThanks()">YA</button>
+      <button class="no" onclick="Swal.fire('FYI', 'Ihssssssssssssss 💍')">TIDAK</button>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="thank-you" id="thankYouText">TERIMA KASIH<br>LINA 💍</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <audio autoplay loop id="bg-music">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function showThanks() {
+      document.getElementById("buttonContainer").style.display = "none";
+
+      document.getElementById("section3").scrollIntoView({ behavior: 'smooth' });
+
+      setTimeout(() => {
+        document.getElementById("thankYouText").style.opacity = 1;
+        document.getElementById("thankYouText").style.transform = "translateY(0)";
+      }, 500);
+
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+</html>
