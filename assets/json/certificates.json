@@ -1,0 +1,23 @@
+[
+    {
+    "id": "1",
+    "picture": "assets/img/sertifikat/fullstack.webp",
+    "url": "https://github.com/andarutr/nomads",
+    "created_at": "2024-03-08 05:54:21",
+    "updated_at": "2024-03-08 05:54:21"
+    },
+    {
+    "id": "2",
+    "picture": "assets/img/sertifikat/codepolitan_skkni.webp",
+    "url": "https://github.com/andarutr/shop-skkni",
+    "created_at": "2024-03-08 05:54:54",
+    "updated_at": "2024-03-08 05:54:54"
+    },
+    {
+    "id": "4",
+    "picture": "assets/img/sertifikat/kelas_work_software_engineering.webp",
+    "url": "https://drive.google.com/file/d/1-mzYOEUA3Pp9OA7NAunRnZ5yxKFwOWR3/view?usp=sharing",
+    "created_at": "2025-01-20 09:12:00",
+    "updated_at": "2025-01-20 09:12:00"
+    }
+]
