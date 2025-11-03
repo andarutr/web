@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/meanmenu.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <style>
         .click_menu {
             cursor: pointer
@@ -24,9 +25,31 @@
             background-color: white;
         }
 
-        /* .banner_one_img img {
-            width: 70%; 
-        } */
+        .whatsapp-float-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #25D366; 
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-float-button:hover {
+            background-color: #128C7E; 
+        }
+
+        .whatsapp-float-button i {
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +100,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-4">
                     <div class="banner_one_img">
-                        <img src="assets/img/54014525.png" class="rounded" alt="img" width="350">
+                        <img src="assets/img/andaru-triadi.png" class="rounded" alt="img" width="350">
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -378,6 +401,10 @@
         </div>
       </div>
     </div>
+
+    <a href="https://wa.me/6289668764457" class="whatsapp-float-button" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp text-white"></i>
+    </a>
 
     <!-- JS -->
     <script src="assets/js/jquery.min.js"></script>
