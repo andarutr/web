@@ -2,498 +2,441 @@
 <html lang="id">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Andaru Triadi - Fullstack Developer</title>
     <meta name="description" content="Andaru Triadi adalah seorang Fullstack Developer. Memiliki pengalaman lebih dari 3 tahun dalam dunia pemrograman.">
     <meta name="keywords" content="Andaru Triadi">
     <meta name="author" content="Andaru Triadi">
     <link rel="canonical" href="https://andarutriadi.netlify.app/">
     <link rel="icon" type="image/png" href="assets/img/logo.png">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/navber.css" />
-    <link rel="stylesheet" href="assets/css/meanmenu.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <style>
-        .click_menu {
-            cursor: pointer
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FDC334',
+                        secondary: '#25D366',
+                        dark: '#1f2937',
+                        light: '#f9fafb'
+                    }
+                }
+            }
         }
-        .banner_one_img {
-            border: 5px solid #FDC334; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            display: inline-block; 
-            transition: border-color 0.3s ease; 
-            background-color: white;
-        }
-
-        .whatsapp-float-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background-color: #25D366; 
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .whatsapp-float-button:hover {
-            background-color: #128C7E; 
-        }
-
-        .whatsapp-float-button i {
-            font-size: 30px;
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .hero-pattern {
+                background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
         }
     </style>
 </head>
-<body>
-    <header class="main_header_arae">
-        <div class="navbar-area">
-            <div class="main-responsive-nav">
-                <div class="container">
-                    <div class="main-responsive-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" alt="logo" width="50">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-navbar">
-                <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" alt="logo" width="80">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link click_menu" href="index.html">Beranda</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link click_menu" href="#pengalaman">Pengalaman Kerja</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link click_menu" href="https://s.id/daru-work">Portfolio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link click_menu" href="#sertifikat">Sertifikat</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link click_menu" href="#contact">Kontak</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+<body class="bg-light text-gray-800 font-sans">
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/img/logo.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-primary">
+                <span class="font-bold text-xl text-gray-900">Andaru</span>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-primary transition">Beranda</a>
+                <a href="#experience" class="hover:text-primary transition">Pengalaman</a>
+                <a href="https://s.id/daru-work" target="_blank" class="hover:text-primary transition">Portfolio</a>
+                <a href="#certificates" class="hover:text-primary transition">Sertifikat</a>
+                <a href="#contact" class="hover:text-primary transition">Kontak</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-inner">
+            <a href="#home" class="block py-2 hover:text-primary">Beranda</a>
+            <a href="#experience" class="block py-2 hover:text-primary">Pengalaman</a>
+            <a href="https://s.id/daru-work" class="block py-2 hover:text-primary">Portfolio</a>
+            <a href="#certificates" class="block py-2 hover:text-primary">Sertifikat</a>
+            <a href="#contact" class="block py-2 hover:text-primary">Kontak</a>
         </div>
     </header>
 
-    <!-- Content !-->
-    <section id="home_one_banner">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4">
-                    <div class="banner_one_img">
-                        <img src="assets/img/andaru.webp" class="rounded" alt="img" width="350">
-                    </div>
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 hero-pattern">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-2/5 mb-10 md:mb-0 flex justify-center">
+                <div class="border-4 border-primary rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-105">
+                    <img src="assets/img/andaru.webp" alt="Andaru Triadi" class="w-64 h-64 object-cover">
                 </div>
-                <div class="col-lg-8">
-                    <div class="">
-                        <h3><span class="color_big">Andaru</span> Triadi</h3>
-                        <p class="mt-3">Spesialis dalam pengembangan sistem terintegrasi untuk industri manufaktur dengan fokus pada optimalisasi proses bisnis. Terlibat aktif dalam seluruh lifecycle project mulai dari requirement analysis, development, maintenance, fixing bug, hingga sosialisasi ke end-user. Terbiasa menggunakan Framework seperti: Bootstrap, jQuery, Angular, Laravel, Codeigniter, MySQL, Firebase, dan Git.</p>
-                        
-                        <p class="mt-3">
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cvModal">Download CV</a>&nbsp;
-                            <a href="http://s.id/daru-work"class="btn btn-success">Portfolio</a>
-                        </p>
-                    </div>
+            </div>
+            <div class="md:w-3/5 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    <span class="text-primary">Andaru</span> Triadi
+                </h1>
+                <p class="text-lg mb-6 max-w-2xl">
+                    Spesialis dalam pengembangan sistem terintegrasi untuk industri manufaktur dengan fokus pada optimalisasi proses bisnis. Terlibat aktif dalam seluruh lifecycle project mulai dari requirement analysis, development, maintenance, fixing bug, hingga sosialisasi ke end-user. Terbiasa menggunakan Framework seperti: Bootstrap, jQuery, Angular, Laravel, Codeigniter, MySQL, Firebase, dan Git.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                    <button id="cvModalBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
+                        <i class="fas fa-download mr-2"></i>Download CV
+                    </button>
+                    <a href="https://s.id/daru-work" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
+                        <i class="fas fa-briefcase mr-2"></i>Portfolio
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience !-->
-    <section id="pengalaman" class="section_padding">
-        <div class="container mt-5">
-            <div class="row">
-                <h2 class="mb-3 text-center" style="margin-top: -8%;" id="contact">Pengalaman Kerja</h2>
-                <div class="col-lg-8 mx-auto">
-                    <div class="card shadow" style="border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-2">PT. Quadra Property Syariah</h4>
-                            <h5>Backend Developer</h5>
-                            <p class="mb-3">Freelance | Okt 2025 - Saat ini</p>
-                            <ul>
-                                <li><u>Responsibility:</u></li>
-                                <li>• Membuat Restful API agar dapat digunakan oleh tim frontend.</li>
-                                <li>• Merancang dokumentasi API secara lengkap agar dapat mempermudah tim frontend.</li>
-                                <li>• Melakukan testing endpoint mulai dari autentikasi hingga transaksi utama di postman.</li>
-                                <li>• Dibuat menggunakan ExpressJS, MySQL dan Postman.</li>
-                            </ul>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/bootstrap.webp" alt="Bootstrap" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">Bootstrap</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/jquery.webp" alt="jQuery" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">jQuery</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/angular.webp" alt="Angular" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">Angular</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/laravel.webp" alt="Laravel" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">Laravel</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/codeigniter.webp" alt="CodeIgniter" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">CodeIgniter</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/mysql.webp" alt="MySQL" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">MySQL</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/firebase.webp" alt="Firebase" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">Firebase</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+                    <img src="assets/img/skill/git.webp" alt="Git" class="w-16 h-16 object-contain mb-2">
+                    <span class="text-sm font-medium">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Pengalaman Kerja</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-gray-900">PT. Quadra Property Syariah</h3>
+                    <h4 class="text-xl">Backend Developer</h4>
+                    <p>Freelance | Okt 2025 - Saat ini</p>
+                    <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Membuat Restful API agar dapat digunakan oleh tim frontend.</li>
+                        <li>Merancang dokumentasi API secara lengkap agar dapat mempermudah tim frontend.</li>
+                        <li>Melakukan testing endpoint mulai dari autentikasi hingga transaksi utama di postman.</li>
+                        <li>Dibuat menggunakan ExpressJS, MySQL dan Postman.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-gray-900">PT. Prakarsa Alam Segar (Wings Group)</h3>
+                    <h4 class="text-xl">Fullstack Developer</h4>
+                    <p>Kontrak | Mar 2024 - Nov 2025</p>
+                    <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Meeting bersama end-user untuk mengetahui kebutuhan mereka agar dapat membuat fitur yang tepat.</li>
+                        <li>Merancang database yang dapat mengelola data dengan efisien.</li>
+                        <li>Melakukan proses development, maintenance hingga fixing bug sesuai dengan deadline yang telah diberikan.</li>
+                        <li>Membuat dokumentasi program yang mudah dipahami oleh developer maupun user.</li>
+                        <li>Melakukan interview user dan mengevaluasi kandidat potensial untuk membantu tim HR dalam proses rekrutmen.</li>
+                        <li>Memberikan bimbingan teknis kepada peserta internship sesuai dengan waktu yang telah ditentukan.</li>
+                        <li>Dibuat menggunakan Bootstrap, jQuery, Laravel, Angular, MySQL, dan Firebase.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-gray-900">PT. Lalamove Logistik Indonesia</h3>
+                    <h4 class="text-xl">Driver</h4>
+                    <p>Freelance | Jan 2023 - Des 2023</p>
+                    <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Memiliki 10 pelanggan tetap dengan memberikan pelayanan yang terbaik.</li>
+                        <li>Bertanggung jawab penuh atas keadaan makanan atau barang selama proses pengantaran.</li>
+                        <li>Membangun hubungan baik dengan pelanggan tetap agar meningkatkan repeat order.</li>
+                        <li>Melakukan pemeriksaan rutin terhadap kendaraan untuk memastikan keselamatan operasional.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-gray-900">CV. Mitra Jaya Solusindo</h3>
+                    <h4 class="text-xl">Fullstack Developer</h4>
+                    <p>Kontrak | Jun 2021 - Jun 2022</p>
+                    <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Membuat website untuk administrasi kendaraan yang memudahkan mengurus perpanjang pajak kendaraan.</li>
+                        <li>Maintenance secara berkala untuk memastikan website tetap berjalan dengan baik dan aman dengan melakukan pembaruan sistem dan perbaikan bug.</li>
+                        <li>Melakukan upload ke hosting untuk memastikan website dapat diakses oleh pengguna.</li>
+                        <li>Meeting secara berkala untuk memastikan project sesuai dengan ekspektasi atasan.</li>
+                        <li>Dibuat menggunakan Bootstrap, Laravel, dan MySQL.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-gray-900">SMK Islam PB. Soedirman 2</h3>
+                    <h4 class="text-xl">Fullstack Developer</h4>
+                    <p>Kontrak | Mei 2020 - Apr 2021</p>
+                    <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Membuat website perpustakaan dan absensi yang memudahkan pengelolaan data peminjam buku dan kehadiran siswa dengan fitur yang user-friendly.</li>
+                        <li>Melakukan maintenance secara berkala untuk memastikan website berjalan sesuai dengan kebutuhan pengguna dengan melakukan pembaruan sistem secara rutin.</li>
+                        <li>Mempermudah lebih dari 500 siswa untuk melakukan absen secara online selama pandemi COVID-19.</li>
+                        <li>Melakukan improvement terhadap website yang telah dibuat bersama kepala sekolah dan wakil kepala sekolah.</li>
+                        <li>Dibuat menggunakan Bootstrap, Laravel, dan MySQL.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Project</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Project Card 1 -->
+                <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
+                            <span class="text-gray-500">Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Transportation Management System (TMS)</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-8 mx-auto mt-3">
-                    <div class="card shadow" style="border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-2">PT. Prakarsa Alam Segar (Wings Group)</h4>
-                            <h5>Fullstack Developer</h5>
-                            <p class="mb-3">Kontrak | Mar 2024 - Nov 2025</p>
-                            <ul>
-                                <li><u>Responsibility:</u></li>
-                                <li>• Meeting bersama end-user untuk mengetahui kebutuhan mereka agar dapat membuat fitur yang tepat.</li>
-                                <li>• Merancang database yang dapat mengelola data dengan efisien.</li>
-                                <li>• Melakukan proses development, maintenance hingga fixing bug sesuai dengan deadline yang telah diberikan.</li>
-                                <li>• Membuat dokumentasi program yang mudah dipahami oleh developer maupun user.</li>
-                                <li>• Melakukan interview user dan mengevaluasi kandidat potensial untuk membantu tim HR dalam proses rekrutmen.</li>
-                                <li>• Memberikan bimbingan teknis kepada peserta internship sesuai dengan waktu yang telah ditentukan.</li>
-                                <li>• Dibuat menggunakan Bootstrap, jQuery, Laravel, Angular, MySQL, dan Firebase.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8 mx-auto mt-3">
-                    <div class="card shadow" style="border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-2">PT. Lalamove Logistik Indonesia</h4>
-                            <h5>Driver</h5>
-                            <p class="mb-3">Freelance | Jan 2023 - Des 2023</p>
-                            <ul>
-                                <li><u>Responsibility:</u></li>
-                                <li>• Memiliki 10 pelanggan tetap dengan memberikan pelayanan yang terbaik.</li>
-                                <li>• Bertanggung jawab penuh atas keadaan makanan atau barang selama proses pengantaran.</li>
-                                <li>• Membangun hubungan baik dengan pelanggan tetap agar meningkatkan repeat order.</li>
-                                <li>• Melakukan pemeriksaan rutin terhadap kendaraan untuk memastikan keselamatan operasional.</li>
-                            </ul>
-                        </div>
+                    <div class="p-6">
+                        <p>Dampak:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Mudah melacak posisi kendaraan (truck) menggunakan maps custom.</li>
+                            <li>Mengurangi 80% penggunaan kertas untuk transaksional.</li>
+                            <li>Tepat dalam mengambil keputusan improvement berdasarkan data aktual.</li>
+                            <li>Mengurangi penggunaan HT dalam komunikasi, telah tersedia maps custom.</li>
+                            <li>Mempercepat analisa trend pengiriman material antar department.</li>
+                            <li>Efektif nya leadtime trouble truck, setiap ada trouble, system akan mengirimkan notifikasi telegram.</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="col-lg-8 mx-auto mt-3">
-                    <div class="card shadow" style="border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-2">CV. Mitra Jaya Solusindo</h4>
-                            <h5>Fullstack Developer</h5>
-                            <p class="mb-3">Kontrak | Jun 2021 - Jun 2022</p>
-                            <ul>
-                                <li><u>Responsibility:</u></li>
-                                <li>• Membuat website untuk administrasi kendaraan yang memudahkan mengurus perpanjang pajak kendaraan.</li>
-                                <li>• Maintenance secara berkala untuk memastikan website tetap berjalan dengan baik dan aman dengan melakukan pembaruan sistem dan perbaikan bug.</li>
-                                <li>• Melakukan upload ke hosting untuk memastikan website dapat diakses oleh pengguna.</li>
-                                <li>• Meeting secara berkala untuk memastikan project sesuai dengan ekspektasi atasan.</li>
-                                <li>• Dibuat menggunakan Bootstrap, Laravel, dan MySQL.</li>
-                            </ul>
+                <!-- Project Card 2 -->
+                <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
+                            <span class="text-gray-500">Image</span>
                         </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Silo Management System (SMS)</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p>Dampak:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Mudah melacak posisi kendaraan (truck) via API Intellitrac.</li>
+                            <li>Mengoptimalkan pengecekan durasi dan jam bongkar dan muat tepung.</li>
+                            <li>Mengurangi komunikasi diluar jam kerja, sudah ada dashboard pantau truck.</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="col-lg-8 mx-auto mt-3">
-                    <div class="card shadow" style="border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-2">SMK Islam PB. Soedirman 2</h4>
-                            <h5>Fullstack Developer</h5>
-                            <p class="mb-3">Kontrak | Mei 2020 - Apr 2021</p>
-                            <ul>
-                                <li><u>Responsibility:</u></li>
-                                <li>• Membuat website perpustakaan dan absensi yang memudahkan pengelolaan data peminjam buku dan kehadiran siswa dengan fitur yang user-friendly.</li>
-                                <li>• Melakukan maintenance secara berkala untuk memastikan website berjalan sesuai dengan kebutuhan pengguna dengan melakukan pembaruan sistem secara rutin.</li>
-                                <li>• Mempermudah lebih dari 500 siswa untuk melakukan absen secara online selama pandemi COVID-19.</li>
-                                <li>• Melakukan improvement terhadap website yang telah dibuat bersama kepala sekolah dan wakil kepala sekolah.</li>
-                                <li>• Dibuat menggunakan Bootstrap, Laravel, dan MySQL.</li>
-                            </ul>
+                <!-- Project Card 3 -->
+                <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
+                            <span class="text-gray-500">Image</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills !-->
-    <section id="upcoming_events" class="section_padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12 text-center mb-5">
-                    <h2>Skills</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://getbootstrap.com" target="_blank">
-                                <img src="assets/img/skill/bootstrap.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://jquery.com" target="_blank">
-                                <img src="assets/img/skill/jquery.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://angular.dev" target="_blank">
-                                <img src="assets/img/skill/angular.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://laravel.com" target="_blank">
-                                <img src="assets/img/skill/laravel.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-2">
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 mt-2">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://codeigniter.com" target="_blank">
-                                <img src="assets/img/skill/codeigniter.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 mt-2">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://mysql.com" target="_blank">
-                                <img src="assets/img/skill/mysql.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 mt-2">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://firebase.google.com" target="_blank">
-                                <img src="assets/img/skill/firebase.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 mt-2">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <div class="case_boxed_img">
-                            <a href="https://git-scm.com" target="_blank">
-                                <img src="assets/img/skill/git.webp" alt="img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificate !-->
-    <section id="gallery_grid_area" class="section_padding">
-        <div class="container">
-            <h2 class="mb-3 text-center" style="margin-top: -40% !important;" id="sertifikat">Sertifikat</h2>
-            <div class="row mx-auto">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
-                    <div class="row popup-gallery"id="certificate"></div>
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact !-->
-    <section id="contact_arae_main" class="section_padding">
-        <div class="container">
-            <div class="row">
-                <h2 class="mb-3 text-center" style="margin-top: -8%;" id="contact">Kontak</h2>
-                <div class="col-lg-2"></div>
-                <div class="col-lg-4">
-                    <div class="contact_area_left">
-                        <div class="contact_left_item">
-                            <div class="contact_left_icon">
-                                <img src="assets/img/icon/email.webp" alt="icon" width="50">
-                            </div>
-                            <div class="contact_left_text">
-                                <h3>Email</h3>
-                                <a href="mailto:andarutr@gmail.com" target="_blank">andarutr@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact_left_item">
-                            <div class="contact_left_icon">
-                                <img src="assets/img/icon/github.webp" alt="icon" width="50">
-                            </div>
-                            <div class="contact_left_text">
-                                <h3>Github</h3>
-                                <a href="https://github.com/andarutr" target="_blank">github.com/andarutr</a>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Downtime (Track Downtime Machine)</h3>
                             </div>
                         </div>
                     </div>
+                    <div class="p-6">
+                        <p>Dampak:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Mudah manage task ke setiap teknisi engineering.</li>
+                            <li>Mengetahui data statistik mesin yang sering trouble setiap department.</li>
+                            <li>Pengerjaan task teknisi lebih terstruktur.</li>
+                            <li>Dengan adanya dashboard weekly meeting lebih terukur.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="contact_left_item">
-                        <div class="contact_left_icon">
-                            <img src="assets/img/icon/linkedin.webp" alt="icon" width="40">
+                
+                <!-- Project Card 4 -->
+                <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
+                            <span class="text-gray-500">Image</span>
                         </div>
-                        <div class="contact_left_text">
-                            <h3>Linkedin</h3>
-                            <a href="https://linkedin.com/in/andaru-triadi" target="_blank">in/andaru-triadi</a>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Help Dev (Ticket Management System)</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact_left_item">
-                        <div class="contact_left_icon">
-                            <img src="assets/img/icon/cv.webp" alt="icon" width="40">
+                    <div class="p-6">
+                        <p>Dampak:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Mudah memberikan tasklist kepada developer dan data analyst.</li>
+                            <li>Penilaian performa developer lebih efisien dan terukur.</li>
+                            <li>Developer mudah menetapkan prioritas pekerjaan masing-masing.</li>
+                            <li>Atasan lebih mudah organize project ke setiap developer.</li>
+                            <li>Leadtime antara penerimaan dan eksekusi task lebih efektif.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Project Card 5 -->
+                <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
+                            <span class="text-gray-500">Image</span>
                         </div>
-                        <div class="contact_left_text">
-                            <h3>Curriculum Vitae</h3>
-                            <a href="assets/CV Andaru Triadi.pdf" target="_blank">Download</a>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Shelf Life Lab QA (Quality Assurance)</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Big Thank's to !-->
-    <section id="upcoming_events" class="section_padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
-                    <div class="section_heading">
-                        <h2>Terimakasih</h2>
-                    </div>
-                </div>
-            </div>
-             <div class="row justify-content-center">
-                <div class="col-lg-1 col-md-2 col-sm-4 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <a href="https://bsi.ac.id" target="_blank" title="Univ.BSI">
-                            <img src="assets/img/icon/ubsi.webp" alt="img" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-2 col-sm-4 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <a href="https://codepolitan.com" target="_blank" title="Codepolitan">
-                            <img src="assets/img/icon/codepolitan.webp" alt="img" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-2 col-sm-4 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two" title="Web Programmign Unpas">
-                        <a href="https://www.youtube.com/c/webprogrammingunpas" target="_blank">
-                            <img src="assets/img/icon/wpu.webp" alt="img" class="img-fluid" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-2 col-sm-4 col-3">
-                    <div class="case_boxed_wrapper causes_boxed_two">
-                        <a href="https://id.linkedin.com/company/mie-sedap" target="_blank" title="PT. Prakarsa Alam Segar">
-                            <img src="assets/img/icon/Prakarsa-Alam-Segar.jpg" alt="img" class="img-fluid" loading="lazy">
-                        </a>
+                    <div class="p-6">
+                        <p>Dampak:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Minimnya keterlambatan terhadap penginputan analisa sample mie.</li>
+                            <li>Mengetahui trend setiap sample mie, mulai dari kadar air hingga viskositas.</li>
+                            <li>Tidak perlu menghitung rumus, karena sudah ada perhitungan nya di system.</li>
+                            <li>Rak cenderung ter-pantau secara system. Menampilkan rak hingga jumlah sample dan persentase nya.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Copyright Area -->
-    <h5 class="text-center">Coding With My Hands ❤️</h5>
-    <br>
-
-    <!-- Modal Pilihan CV -->
-    <div class="modal fade" id="cvModal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cvModalLabel">Pilih Versi CV</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <p class="mb-3">Silakan pilih bahasa CV yang ingin Anda unduh:</p>
-            <a href="https://drive.google.com/file/d/1ugqQXacF6noC0qmHtoq83N9BhcpKV-QH/view?usp=sharing" class="btn btn-primary mb-2" target="_blank">Versi Indonesia</a>&nbsp;
-            <a href="https://drive.google.com/file/d/1hs-yxJ75mhMIUGA1HHJZifOceXzOSA8h/view?usp=sharing" class="btn btn-success mb-2" target="_blank">Versi Inggris</a> 
-          </div>
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Kontak Saya</h2>
+            <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="mailto:andarutr@gmail.com" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Email</h3>
+                        <p class="text-gray-600">andarutr@gmail.com</p>
+                    </div>
+                </a>
+                <a href="https://github.com/andarutr" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-gray-800 p-3 rounded-full mr-4">
+                        <i class="fab fa-github text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">GitHub</h3>
+                        <p class="text-gray-600">github.com/andarutr</p>
+                    </div>
+                </a>
+                <a href="https://linkedin.com/in/andaru-triadi" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-600 p-3 rounded-full mr-4">
+                        <i class="fab fa-linkedin text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">LinkedIn</h3>
+                        <p class="text-gray-600">in/andaru-triadi</p>
+                    </div>
+                </a>
+                <a href="assets/CV Andaru Triadi.pdf" target="_blank" class="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-file-pdf text-red-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Curriculum Vitae</h3>
+                        <p class="text-gray-600">Download CV</p>
+                    </div>
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="titleModal"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div id="contentModal"></div>
-          </div>
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl mb-4">Terimakasih</h3>
+            <div class="flex justify-center space-x-6 mb-6 flex-wrap gap-4">
+                <a href="https://bsi.ac.id" target="_blank" class="opacity-70 hover:opacity-100 transition">
+                    <img src="assets/img/icon/ubsi.webp" alt="Univ. BSI" class="h-10">
+                </a>
+                <a href="https://codepolitan.com" target="_blank" class="opacity-70 hover:opacity-100 transition">
+                    <img src="assets/img/icon/codepolitan.webp" alt="Codepolitan" class="h-10">
+                </a>
+                <a href="https://www.youtube.com/c/webprogrammingunpas" target="_blank" class="opacity-70 hover:opacity-100 transition">
+                    <img src="assets/img/icon/wpu.webp" alt="Web Programming Unpas" class="h-10">
+                </a>
+                <a href="https://id.linkedin.com/company/mie-sedap" target="_blank" class="opacity-70 hover:opacity-100 transition">
+                    <img src="assets/img/icon/Prakarsa-Alam-Segar.jpg" alt="PT. Prakarsa Alam Segar" class="h-10">
+                </a>
+            </div>
+            <p class="text-gray-400">Coding With My Hands ❤️</p>
         </div>
-      </div>
-    </div>
+    </footer>
 
-    <a href="https://wa.me/6289668764457" class="whatsapp-float-button" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp text-white"></i>
+    <a href="https://wa.me/6289668764457" target="_blank" class="fixed bottom-6 right-6 bg-secondary hover:bg-[#128C7E] text-white p-4 rounded-full shadow-lg transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <!-- JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.js"></script>
-    <script src="assets/js/jquery.meanmenu.js"></script>
-    <script src="assets/js/moment.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-    $.getJSON('assets/json/certificates.json', function(data){
-        $.each(data, function(index,item){
-            $('#certificate').append(`
-            <div class="col-lg-3 co-md-6 col-sm-12 col-6 mt-2 mx-auto">
-                <div class="card shadow">
-                    <div class="card-body text-center">
-                        <div class="gallery_item">
-                            <img src="${item.picture}" alt="img" class="imgUrl" style="cursor: pointer">
-                        </div>
-                    </div>
-                </div>
+    <!-- CV Modal -->
+    <div id="cvModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-900">Pilih Versi CV</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
             </div>
-            `);
+            <p class="mb-4 text-gray-600">Silakan pilih bahasa CV yang ingin Anda unduh:</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="https://drive.google.com/file/d/1ugqQXacF6noC0qmHtoq83N9BhcpKV-QH/view?usp=sharing" target="_blank" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                    Versi Indonesia
+                </a>
+                <a href="https://drive.google.com/file/d/1hs-yxJ75mhMIUGA1HHJZifOceXzOSA8h/view?usp=sharing" target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                    Versi Inggris
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    });
 
-    $(document).on("click", ".imgUrl", function(){
-        let url = $(this).attr("src");
+        const cvModal = document.getElementById('cvModal');
+        const cvModalBtn = document.getElementById('cvModalBtn');
+        const closeModal = document.getElementById('closeModal');
 
-        $("#titleModal").text("Sertifikat");
+        cvModalBtn.addEventListener('click', () => {
+            cvModal.classList.remove('hidden');
+        });
 
-        $("#contentModal").empty();
-        $("#contentModal").append(`
-          <img src="${url}" alt="img" class="imgUrl" />
-        `);
+        closeModal.addEventListener('click', () => {
+            cvModal.classList.add('hidden');
+        });
 
-        $("#modal").modal("show");
-    })
+        window.addEventListener('click', (e) => {
+            if (e.target === cvModal) {
+                cvModal.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
