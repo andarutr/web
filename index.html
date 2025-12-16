@@ -87,6 +87,37 @@
         </div>
     </section>
 
+    <section id="education" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Pendidikan</h2>
+            <div class="max-w-3xl mx-auto bg-gray-50 p-6 rounded-2xl shadow-sm">
+                <div class="mb-6 pb-6 border-b border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">S1 - Universitas Bina Sarana Informatika</h3>
+                    <p class="text-lg text-gray-700">Jurusan: Teknologi Informasi | GPA: 3.4 / 4.0 | Tahun: 2019 s/d 2023</p>
+                </div>
+
+                <button id="toggleEducation" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-4 rounded-lg transition duration-300 mb-4">
+                    <i class="fas fa-chevron-down mr-2"></i> Tampilkan Riwayat Pendidikan Lainnya
+                </button>
+
+                <div id="moreEducation" class="hidden space-y-6">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="text-lg font-semibold text-gray-900">SMK Islam PB. Soedirman 2</h4>
+                        <p class="text-gray-700">Jurusan: Animasi | Tahun: 2016 s/d 2019</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="text-lg font-semibold text-gray-900">SMP Negeri 14 Jakarta</h4>
+                        <p class="text-gray-700">Tahun: 2013 s/d 2016</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="text-lg font-semibold text-gray-900">SD Negeri 05 Jakarta</h4>
+                        <p class="text-gray-700">Tahun: 2007 s/d 2013</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Skills</h2>
@@ -435,29 +466,38 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        $(document).ready(function() {
+            $('#mobile-menu-button').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
 
-        const cvModal = document.getElementById('cvModal');
-        const cvModalBtn = document.getElementById('cvModalBtn');
-        const closeModal = document.getElementById('closeModal');
+            $('#cvModalBtn').click(function() {
+                $('#cvModal').removeClass('hidden');
+            });
 
-        cvModalBtn.addEventListener('click', () => {
-            cvModal.classList.remove('hidden');
-        });
+            $('#closeModal').click(function() {
+                $('#cvModal').addClass('hidden');
+            });
 
-        closeModal.addEventListener('click', () => {
-            cvModal.classList.add('hidden');
-        });
+            $(window).click(function(e) {
+                if (e.target.id === 'cvModal') {
+                    $('#cvModal').addClass('hidden');
+                }
+            });
 
-        window.addEventListener('click', (e) => {
-            if (e.target === cvModal) {
-                cvModal.classList.add('hidden');
-            }
+            $('#toggleEducation').click(function() {
+                $('#moreEducation').slideToggle(300); // Gunakan slideToggle untuk efek slide
+                const $icon = $(this).find('i');
+                if ($('#moreEducation').is(':visible')) {
+                    $icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    $(this).html('<i class="fas fa-chevron-up mr-2"></i> Sembunyikan Riwayat Pendidikan');
+                } else {
+                    $icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $(this).html('<i class="fas fa-chevron-down mr-2"></i> Tampilkan Riwayat Pendidikan Lainnya');
+                }
+            });
         });
     </script>
 </body>
